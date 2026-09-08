@@ -12,41 +12,64 @@ jobs:
       - name: Checkout project
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - name: Install Capacitor
-        run: |
-          npm init -y
-          npm install @capacitor/core @capacitor/cli @capacitor/android
+      - name: Setup Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 21
 
-      - name: Create Capacitor configuration
+      - name: Create package.json
         run: |
-          cat > capacitor.config.json <<'EOF'
+          cat > package.json <<'EOF'
           {
-            "appId": "com.adesinamutiu.sss2mathematics",
-            "appName": "SSS 2 Mathematics",
-            "webDir": "."
+            "name": "sss-2-mathematics-app",
+            "version": "1.0.0",
+            "private": true,
+            "scripts": {
+              "build": "echo Web app ready"
+            },
+            "dependencies": {
+              "@capacitor/core": "^7.4.0",
+              "@capacitor/android": "^7.4.0"
+            },
+            "devDependencies": {
+              "@capacitor/cli": "^7.4.0"
+            }
           }
           EOF
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Prepare web files
+        run: |
+          mkdir -p www
+          cp -r ./*.html www/ 2>/dev/null || true
+          cp -r ./*.css www/ 2>/dev/null || true
+          cp -r ./*.js www/ 2>/dev/null || true
+          cp -r ./images www/ 2>/dev/null || true
+          cp -r ./assets www/ 2>/dev/null || true
+
+      - name: Initialize Capacitor
+        run: |
+          npx cap init "SSS 2 Mathematics" "com.sss2mathematics.app" --web-dir www
 
       - name: Add Android platform
         run: npx cap add android
 
-      - name: Copy web files
-        run: npx cap copy android
-
-      - name: Set up Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: '17'
+      - name: Sync Android project
+        run: npx cap sync android
 
       - name: Build APK
-        working-directory: android
-        run: ./gradlew assembleDebug
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
