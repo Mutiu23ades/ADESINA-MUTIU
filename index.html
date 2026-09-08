@@ -1,1 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1565c0">
+<title>SSS 2 Mathematics</title>
 
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f8fc;
+        color: #222;
+    }
+
+    header {
+        background: #1565c0;
+        color: white;
+        text-align: center;
+        padding: 25px 15px;
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 28px;
+    }
+
+    header p {
+        margin: 8px 0 0;
+        font-size: 16px;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .selector-box {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    select {
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+        border: 1px solid #bbb;
+        border-radius: 8px;
+        background: white;
+    }
+
+    .topic {
+        display: none;
+        background: white;
+        padding: 22px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        margin-bottom: 20px;
+    }
+
+    .topic.active {
+        display: block;
+    }
+
+    h2 {
+        color: #1565c0;
+        border-bottom: 2px solid #1565c0;
+        padding-bottom: 8px;
+    }
+
+    h3 {
+        color: #0d47a1;
+        margin-top: 25px;
+    }
+
+    .lesson,
+    .examples,
+    .practice,
+    .answers {
+        background: #f8fbff;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 12px;
+    }
+
+    .example {
+        background: white;
+        border-left: 4px solid #1565c0;
+        padding: 12px;
+        margin: 12px 0;
+    }
+
+    .question {
+        margin: 15px 0;
+    }
+
+    .answer {
+        margin: 10px 0;
+    }
+
+    footer {
+        text-align: center;
+        background: #1565c0;
+        color: white;
+        padding: 15px;
+        margin-top: 30px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>SSS 2 Mathematics</h1>
+    <p>Lessons • Worked Examples • Practice • Answers</p>
+</header>
+
+<div class="container">
+
+    <div class="selector-box">
+        <label for="topicSelect">Select a Mathematics Topic:</label>
+
+        <select id="topicSelect" onchange="showTopic()">
+            <option value="">-- Select Topic --</option>
+            <option value="variation">1. Variation</option>
+            <option value="sequence">2. Sequence and Series</option>
+            <option value="quadratic">3. Quadratic Equations</option>
+        </select>
+    </div>
+
+
+    <!-- TOPIC 1 -->
+
+    <section id="variation" class="topic">
+
+        <h2>Topic 1: Variation</h2>
+
+        <div class="lesson">
+
+            <h3>Lesson</h3>
+
+            <p>
+                Variation describes the relationship between two or more
+                quantities. The value of one quantity may depend on the
+                value of another quantity.
+            </p>
+
+            <p>
+                There are three important types of variation:
+            </p>
+
+            <ul>
+                <li>Direct variation</li>
+                <li>Inverse variation</li>
+                <li>Joint variation</li>
+            </ul>
+
+            <h3>Direct Variation</h3>
+
+            <p>
+                If y varies directly as x, we write:
+            </p>
+
+            <p><strong>y ∝ x</strong></p>
+
+            <p>
+                Therefore:
+            </p>
+
+            <p><strong>y = kx</strong></p>
+
+            <p>
+                where k is the constant of variation.
+            </p>
+
+            <h3>Inverse Variation</h3>
+
+            <p>
+                If y varies inversely as x, then:
+            </p>
+
+            <p><strong>y ∝ 1/x</strong></p>
+
+            <p>
+                Therefore:
+            </p>
+
+            <p><strong>y = k/x</strong></p>
+
+            <h3>Joint Variation</h3>
+
+            <p>
+                If y varies jointly as x and z:
+            </p>
+
+            <p><strong>y ∝ xz</strong></p>
+
+            <p>
+                Therefore:
+            </p>
+
+            <p><strong>y = kxz</strong></p>
+
+        </div>
+
+        <div class="examples">
+
+            <h3>Worked Examples</h3>
+
+            <div class="example">
+                <strong>Example 1</strong>
+
+                <p>
+                    y varies directly as x. If y = 12 when x = 4,
+                    find y when x = 10.
+                </p>
+
+                <p>
+                    y = kx
+                </p>
+
+                <p>
+                    12 = 4k
+                </p>
+
+                <p>
+                    k = 3
+                </p>
+
+                <p>
+                    Therefore y = 3x.
+                </p>
+
+                <p>
+                    When x = 10:
+                </p>
+
+                <p>
+                    y = 3 × 10 = <strong>30</strong>
+                </p>
+            </div>
+
+            <div class="example">
+                <strong>Example 2</strong>
+
+                <p>
+                    y varies inversely as x. If y = 8 when x = 3,
+                    find y when x = 12.
+                </p>
+
+                <p>
+                    y = k/x
+                </p>
+
+                <p>
+                    8 = k/3
+                </p>
+
+                <p>
+                    k = 24
+                </p>
+
+                <p>
+                    Therefore y = 24/x.
+                </p>
+
+                <p>
+                    When x = 12:
+                </p>
+
+                <p>
+                    y = 24/12 = <strong>2</strong>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="practice">
+
+            <h3>Practice Questions</h3>
+
+            <div class="question">
+                1. If y varies directly as x and y = 20 when x = 5,
+                find y when x = 8.
+            </div>
+
+            <div class="question">
+                2. If y varies inversely as x and y = 6 when x = 4,
+                find y when x = 8.
+            </div>
+
+            <div class="question">
+                3. If y = kxz, find k when y = 30, x = 3 and z = 5.
+            </div>
+
+        </div>
+
+        <div class="answers">
+
+            <h3>Answers</h3>
+
+            <div class="answer">
+                1. <strong>32</strong>
+            </div>
+
+            <div class="answer">
+                2. <strong>3</strong>
+            </div>
+
+            <div class="answer">
+                3. <strong>2</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TOPIC 2 -->
+
+    <section id="sequence" class="topic">
+
+        <h2>Topic 2: Sequence and Series</h2>
+
+        <div class="lesson">
+
+            <h3>Lesson</h3>
+
+            <p>
+                A sequence is an ordered list of numbers arranged according
+                to a particular rule.
+            </p>
+
+            <p>
+                Example:
+            </p>
+
+            <p>
+                2, 4, 6, 8, 10, ...
+            </p>
+
+            <p>
+                A series is the sum of the terms of a sequence.
+            </p>
+
+            <h3>Arithmetic Progression</h3>
+
+            <p>
+                An arithmetic progression (AP) is a sequence in which
+                the difference between consecutive terms is constant.
+            </p>
+
+            <p>
+                The nth term is:
+            </p>
+
+            <p>
+                <strong>Tₙ = a + (n - 1)d</strong>
+            </p>
+
+            <p>
+                where:
+            </p>
+
+            <ul>
+                <li>a = first term</li>
+                <li>d = common difference</li>
+                <li>n = number of terms</li>
+            </ul>
+
+            <p>
+                The sum of n terms is:
+            </p>
+
+            <p>
+                <strong>Sₙ = n/2 [2a + (n - 1)d]</strong>
+            </p>
+
+            <h3>Geometric Progression</h3>
+
+            <p>
+                A geometric progression (GP) is a sequence in which
+                consecutive terms have a constant ratio.
+            </p>
+
+            <p>
+                The nth term is:
+            </p>
+
+            <p>
+                <strong>Tₙ = arⁿ⁻¹</strong>
+            </p>
+
+            <p>
+                where r is the common ratio.
+            </p>
+
+        </div>
+
+        <div class="examples">
+
+            <h3>Worked Examples</h3>
+
+            <div class="example">
+
+                <strong>Example 1</strong>
+
+                <p>
+                    Find the 10th term of the AP:
+                    3, 7, 11, 15, ...
+                </p>
+
+                <p>
+                    a = 3
+                </p>
+
+                <p>
+                    d = 7 - 3 = 4
+                </p>
+
+                <p>
+                    T₁₀ = 3 + (10 - 1)4
+                </p>
+
+                <p>
+                    = 3 + 36
+                </p>
+
+                <p>
+                    = <strong>39</strong>
+                </p>
+
+            </div>
+
+            <div class="example">
+
+                <strong>Example 2</strong>
+
+                <p>
+                    Find the sum of the first 10 terms of:
+                    2, 5, 8, 11, ...
+                </p>
+
+                <p>
+                    a = 2, d = 3, n = 10
+                </p>
+
+                <p>
+                    S₁₀ = 10/2 [2(2) + (10 - 1)(3)]
+                </p>
+
+                <p>
+                    = 5[4 + 27]
+                </p>
+
+                <p>
+                    = 5 × 31
+                </p>
+
+                <p>
+                    = <strong>155</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="practice">
+
+            <h3>Practice Questions</h3>
+
+            <div class="question">
+                1. Find the 8th term of the AP:
+                5, 9, 13, 17, ...
+            </div>
+
+            <div class="question">
+                2. Find the 10th term of the AP:
+                4, 7, 10, 13, ...
+            </div>
+
+            <div class="question">
+                3. Find the sum of the first 10 terms of:
+                2, 4, 6, 8, ...
+            </div>
+
+        </div>
+
+        <div class="answers">
+
+            <h3>Answers</h3>
+
+            <div class="answer">
+                1. <strong>33</strong>
+            </div>
+
+            <div class="answer">
+                2. <strong>31</strong>
+            </div>
+
+            <div class="answer">
+                3. <strong>110</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TOPIC 3 -->
+
+    <section id="quadratic" class="topic">
+
+        <h2>Topic 3: Quadratic Equations</h2>
+
+        <div class="lesson">
+
+            <h3>Lesson</h3>
+
+            <p>
+                A quadratic equation is an equation that can be written
+                in the form:
+            </p>
+
+            <p>
+                <strong>ax² + bx + c = 0</strong>
+            </p>
+
+            <p>
+                where a, b and c are constants and a ≠ 0.
+            </p>
+
+            <h3>Methods of Solving Quadratic Equations</h3>
+
+            <p>
+                Quadratic equations can be solved by:
+            </p>
+
+            <ul>
+                <li>Factorization</li>
+                <li>Completing the square</li>
+                <li>Quadratic formula</li>
+            </ul>
+
+            <h3>Quadratic Formula</h3>
+
+            <p>
+                For:
+            </p>
+
+            <p>
+                <strong>ax² + bx + c = 0</strong>
+            </p>
+
+            <p>
+                the solutions are:
+            </p>
+
+            <p>
+                <strong>
+                    x = (-b ± √(b² - 4ac)) / 2a
+                </strong>
+            </p>
+
+            <p>
+                The expression:
+            </p>
+
+            <p>
+                <strong>b² - 4ac</strong>
+            </p>
+
+            <p>
+                is called the discriminant.
+            </p>
+
+        </div>
+
+        <div class="examples">
+
+            <h3>Worked Examples</h3>
+
+            <div class="example">
+
+                <strong>Example 1</strong>
+
+                <p>
+                    Solve:
+                </p>
+
+                <p>
+                    x² - 5x + 6 = 0
+                </p>
+
+                <p>
+                    Factorize:
+                </p>
+
+                <p>
+                    (x - 2)(x - 3) = 0
+                </p>
+
+                <p>
+                    Therefore:
+                </p>
+
+                <p>
+                    x = 2 or x = 3
+                </p>
+
+                <p>
+                    <strong>Answer: x = 2, 3</strong>
+                </p>
+
+            </div>
+
+            <div class="example">
+
+                <strong>Example 2</strong>
+
+                <p>
+                    Solve:
+                </p>
+
+                <p>
+                    x² + 2x - 8 = 0
+                </p>
+
+                <p>
+                    Factorize:
+                </p>
+
+                <p>
+                    (x + 4)(x - 2) = 0
+                </p>
+
+                <p>
+                    Therefore:
+                </p>
+
+                <p>
+                    x = -4 or x = 2
+                </p>
+
+                <p>
+                    <strong>Answer: x = -4, 2</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="practice">
+
+            <h3>Practice Questions</h3>
+
+            <div class="question">
+                1. Solve:
+                x² - 7x + 12 = 0
+            </div>
+
+            <div class="question">
+                2. Solve:
+                x² + x - 6 = 0
+            </div>
+
+            <div class="question">
+                3. Solve:
+                x² - 9 = 0
+            </div>
+
+        </div>
+
+        <div class="answers">
+
+            <h3>Answers</h3>
+
+            <div class="answer">
+                1. <strong>x = 3 or 4</strong>
+            </div>
+
+            <div class="answer">
+                2. <strong>x = 2 or -3</strong>
+            </div>
+
+            <div class="answer">
+                3. <strong>x = 3 or -3</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<footer>
+    <p>SSS 2 Mathematics • 3-Topic Test App</p>
+</footer>
+
+
+<script>
+
+function showTopic() {
+
+    const selectedTopic =
+        document.getElementById("topicSelect").value;
+
+    const topics =
+        document.querySelectorAll(".topic");
+
+    topics.forEach(function(topic) {
+        topic.classList.remove("active");
+    });
+
+    if (selectedTopic !== "") {
+
+        const selected =
+            document.getElementById(selectedTopic);
+
+        if (selected) {
+            selected.classList.add("active");
+        }
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+}
+
+</script>
+
+</body>
+</html>
